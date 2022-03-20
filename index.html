@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<style>
+     .box {
+        background-color: blue;
+        color: black;
+        width: 50px;
+        height: 50px;
+        z-index: -1;
+    } 
+</style>
+
+<body onkeydown="getKeyAndMove(event)">
+    <h1> Going to make a background move like a cube</h1>
+    <h3>You are going to make it move by the arrows keys</h3>
+    <div class="box"></div>
+    <button onclick="color()">Switch the Color of the Background</button>
+    <script src="java/movement.js">    
+</script>
+</body>
+<head> <title>Gamedev Canvas workShop</title></head>
+<style>
+    *{
+        padding: 0%;
+        margin: 0%;
+    }
+    canvas{
+        background: #eee; 
+        display: block;
+        margin: 0;
+    }
+</style>
+<body>
+<canvas id="myCanvas" width="480" height="320"></canvas>
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext('2d');
+    //Rectangle Path
+    ctx.beginPath();
+    ctx.rect(20,40,50,50);
+    ctx.fillStyle = "#FF0000";
+    ctx.fill();
+    ctx.closePath();
+    //Circle Path
+    ctx.beginPath();
+    ctx.arc(240, 160, 20, 0, Math.PI*2, false);
+    ctx.fillStyle = "green";
+    ctx.fill();
+    ctx.closePath();
+    //Outside of the rectangle
+    ctx.beginPath();
+    ctx.rect(160, 10, 100, 40);
+    ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
+    ctx.stroke();
+    ctx.closePath();
+
+
+</script>
+<button ><a href="moving.html">To next page</a></button>
+</body>
+</html>
